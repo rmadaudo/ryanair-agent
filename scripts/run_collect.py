@@ -96,7 +96,6 @@ def main():
         try:
             send_email(subject=subject, html_body=html)
             print(f"Alert email inviata: {len(changes)} variazioni")
-            send_telegram(html)
         except Exception as e:
             print(f"Errore invio email: {e}")
         rows = []
@@ -118,11 +117,10 @@ def main():
             f"{rows_text}"
         )
         try:
-            send_email(subject=subject, html_body=html)
             print(f"Alert tgr inviato: {len(changes)} variazioni")
             send_telegram(html)
         except Exception as e:
-            print(f"Errore invio email: {e}")
+            print(f"Errore invio telegram: {e}")
     else:
         print("Nessuna variazione di prezzo rispetto allo snapshot precedente.")
 
