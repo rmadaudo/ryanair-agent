@@ -31,8 +31,8 @@ jobs:
           ALERT_EMAIL_ENABLED: 1
           SMTP_HOST: smtp.gmail.com
           SMTP_PORT: 587
-          SMTP_USERNAME: madaudo.rosario@gmail.com
-          SMTP_PASSWORD: ytghsdyefkbqzrzh
-          SMTP_FROM: madaudo.rosario@gmail.com
-          ALERT_TO: madaudo.rosario@gmail.com
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
           SMTP_USE_TLS: true
