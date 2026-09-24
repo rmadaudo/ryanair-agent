@@ -3,7 +3,7 @@ name: Monitor Voli Ryanair
 on:
   schedule:
     # Gira ogni 3 ore (puoi cambiarlo come preferisci)
-    - cron: '0 */3 * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
