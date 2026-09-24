@@ -24,7 +24,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Esegui lo script di raccolta
-        run: python -m scripts.run_collect
+        run: python -m scripts.run_collect > execution.log 2>&1
         env:
           DB_URL: sqlite:///data/fares.db
           DATA_DIR: data
