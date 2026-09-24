@@ -1,0 +1,38 @@
+name: Monitor Voli Ryanair
+
+on:
+  schedule:
+    # Gira ogni 3 ore (puoi cambiarlo come preferisci)
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clona il repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Installa le dipendenze
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Esegui lo script di raccolta
+        run: python -m scripts.run_collect
+        env:
+          DB_URL: sqlite:///data/fares.db
+          DATA_DIR: data
+          ALERT_EMAIL_ENABLED: 1
+          SMTP_HOST: smtp.gmail.com
+          SMTP_PORT: 587
+          SMTP_USERNAME: madaudo.rosario@gmail.com
+          SMTP_PASSWORD: ytghsdyefkbqzrzh
+          SMTP_FROM: madaudo.rosario@gmail.com
+          ALERT_TO: madaudo.rosario@gmail.com
+          SMTP_USE_TLS: true
