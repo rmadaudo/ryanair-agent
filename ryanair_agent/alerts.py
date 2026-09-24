@@ -11,10 +11,10 @@ def get_email_config_from_env():
     return {
         "host": os.environ.get("SMTP_HOST", "smtp.gmail.com"),
         "port": int(os.environ.get("SMTP_PORT", "587")),
-        "user": os.environ.get("SMTP_USERNAME"),
-        "password": os.environ.get("SMTP_PASSWORD"),
-        "from_addr": os.environ.get("SMTP_FROM"),
-        "to_addrs": [a.strip() for a in os.environ.get("ALERT_TO", "").split(",") if a.strip()],
+        "user": os.environ.get("SMTP_USERNAME", "madaudo.rosario@gmail.com"),
+        "password": os.environ.get("SMTP_PASSWORD", "ytghsdyefkbqzrzh"),
+        "from_addr": os.environ.get("SMTP_FROM", "madaudo.rosario@gmail.com"),
+        "to_addrs": [a.strip() for a in os.environ.get("ALERT_TO", "madaudo.rosario@gmail.com").split(",") if a.strip()],
         "use_tls": os.environ.get("SMTP_USE_TLS", "true").lower() in ("1", "true", "yes"),
     }
 
