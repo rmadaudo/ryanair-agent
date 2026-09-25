@@ -118,7 +118,7 @@ def main():
         )
         try:
             print(f"Alert tgr inviato: {len(changes)} variazioni")
-            send_telegram(html)
+            send_telegram(telegram_message)
         except Exception as e:
             print(f"Errore invio telegram: {e}")
     else:
