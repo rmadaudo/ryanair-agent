@@ -102,18 +102,18 @@ def main():
         for c in changes:
             trend_emoji = "📉" if c["delta"] < 0 else "📈"
             rows.append(
-                f"{trend_emoji} <b>{c['origin']} → {c['destination']}</b> ({c['date']})\n"
-                f"• Prezzo: <code>{c['old_price']:.2f}</code> → <b>{c['new_price']:.2f} {c['currency']}</b>\n"
-                f"• Variazione: <b>{c['delta']:+.2f} {c['currency']}</b> ({c['pct']:+.2f}%)\n"
-                f"• Rilevato: <i>{c['old_ts']} → {c['new_ts']}</i>"
+                f"{trend_emoji} {c['origin']} → {c['destination']} ({c['date']})\n"
+                f"• Prezzo: {c['old_price']:.2f} → {c['new_price']:.2f} {c['currency']}\n"
+                f"• Variazione: {c['delta']:+.2f} {c['currency']} ({c['pct']:+.2f}%)\n"
+                f"• Rilevato: {c['old_ts']} → {c['new_ts']}"
             )
 
         rows_text = "\n\n".join(rows)
 
         telegram_message = (
-            "🔔 <b>Variazioni prezzo rilevate</b>\n"
-            f"📍 Rotta: <b>{origin} → {destination}</b>\n"
-            f"📅 Finestra: <code>{start_date} → {end_date}</code>\n\n"
+            "🔔 Variazioni prezzo rilevate\n"
+            f"📍 Rotta: {origin} → {destination}\n"
+            f"📅 Finestra: {start_date} → {end_date}\n\n"
             f"{rows_text}"
         )
         try:
