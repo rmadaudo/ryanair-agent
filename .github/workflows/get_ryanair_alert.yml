@@ -5,7 +5,7 @@ on:
     # Gira ogni 15 min (puoi cambiarlo come preferisci)
     - cron: '*/15 * * * *'
   workflow_dispatch:
-
+ 
 jobs:
   ping-server:
     runs-on: ubuntu-latest
