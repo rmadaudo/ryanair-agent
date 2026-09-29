@@ -1,0 +1,14 @@
+name: Trigger PythonAnywhere Task
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Esegue ogni ora (puoi modificarlo come preferisci)
+  workflow_dispatch:      # Ti permette di testarlo a mano quando vuoi
+
+jobs:
+  ping-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Richiama endpoint PythonAnywhere
+        run: |
+          curl -X GET "hhttps://rmadaudo.pythonanywhere.com/ryanair_price"
