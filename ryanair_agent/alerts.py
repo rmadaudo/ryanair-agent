@@ -108,7 +108,7 @@ def send_email(
         from_addr = os.getenv("SMTP_FROM")
         to_addrs = os.getenv("ALERT_TO")
         use_tls = os.getenv("SMTP_USE_TLS")
-
+        get_email_config_from_env()
         if not (host and port and from_addr and to_addrs):
             raise ValueError("Email config incompleta: controlla SMTP_HOST/PORT, SMTP_FROM, ALERT_TO")
         msg = EmailMessage()
