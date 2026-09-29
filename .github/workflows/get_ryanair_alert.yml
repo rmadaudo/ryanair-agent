@@ -2,7 +2,6 @@ name: Trigger PythonAnywhere Task
 
 on:
   schedule:
-    # Gira ogni 15 min (puoi cambiarlo come preferisci)
     - cron: '*/15 * * * *'
   workflow_dispatch:
  
