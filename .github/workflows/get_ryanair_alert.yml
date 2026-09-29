@@ -2,8 +2,9 @@ name: Trigger PythonAnywhere Task
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Esegue ogni ora (puoi modificarlo come preferisci)
-  workflow_dispatch:      # Ti permette di testarlo a mano quando vuoi
+    # Gira ogni 15 min (puoi cambiarlo come preferisci)
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
 
 jobs:
   ping-server:
