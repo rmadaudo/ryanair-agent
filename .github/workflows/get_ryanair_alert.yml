@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Richiama endpoint PythonAnywhere
         run: |
-          curl -X GET "hhttps://rmadaudo.pythonanywhere.com/ryanair_price"
+          curl -X GET "https://rmadaudo.pythonanywhere.com/ryanair_price"
